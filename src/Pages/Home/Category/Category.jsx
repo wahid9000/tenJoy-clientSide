@@ -34,6 +34,7 @@ const Category = () => {
 
 
 
+
     return (
         <div className="my-24">
             <div className=" text-center space-y-5">
