@@ -1,7 +1,14 @@
+import { useContext, useState } from "react";
 import { FaArrowRight, FaGoogle } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../Provider/AuthProvider";
+import { toast } from "react-hot-toast";
 
 const Login = () => {
+    const navigate = useNavigate();
+    const { loginUser, googleLogin } = useContext(AuthContext)
+    const [error, setError] = useState("")
+    const [success, setSuccess] = useState("")
 
     const handleSignIn = (event) => {
         event.preventDefault();
@@ -9,6 +16,32 @@ const Login = () => {
         const email = form.email.value;
         const password = form.password.value;
         console.log(email, password);
+
+        loginUser(email, password)
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser);
+                form.reset();
+                setSuccess(toast("Login Successful."))
+                navigate('/');
+            })
+            .catch(error => {
+                console.log(error);
+                setError(toast("Invalid Email or Password"))
+            })
+    }
+
+    const handleGoogleLogin = () => {
+        googleLogin()
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser);
+                setSuccess(toast("Login Successful."))
+                navigate('/');
+            })
+            .catch(error => {
+                console.log(error);
+            })
     }
 
 
@@ -35,11 +68,13 @@ const Login = () => {
                         <p>Dont have an account?</p>
                         <Link to="/register" className="font-bold text-green-700 hover:text-orange-500 flex items-center gap-1">SignUp Now <FaArrowRight></FaArrowRight></Link>
                     </div>
-                    <div className="mx-auto w-1/2 mt-4 text-center">
-                        <button className="btn btn-outline rounded-2xl"><FaGoogle className="mr-2"></FaGoogle>Sign In With Google</button>
-                    </div>
 
+                    <p className="hidden">{error}</p>
+                    <p className="hidden">{success}</p>
                 </form>
+                <div className="mx-auto w-1/2 mt-4 text-center">
+                    <button onClick={handleGoogleLogin} className="btn btn-outline rounded-2xl"><FaGoogle className="mr-2"></FaGoogle>Sign In With Google</button>
+                </div>
             </div>
             <div>
                 <img src="https://i.ibb.co/XC9WKh4/Untitled-design-11.png" className="h-[600px] w-full mx-auto rounded-xl" alt="" />
