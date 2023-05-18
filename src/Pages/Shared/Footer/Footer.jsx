@@ -14,7 +14,7 @@ const Footer = () => {
             </div>
             <div className="text-white">
                 <span className="footer-title">Services</span>
-                <a className="link link-hover">Branding</a>
+                <Link className="link link-hover">Branding</Link>
                 <a className="link link-hover">Design</a>
                 <a className="link link-hover">Marketing</a>
                 <a className="link link-hover">Advertisement</a>

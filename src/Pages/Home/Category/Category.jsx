@@ -1,7 +1,39 @@
+import { useEffect, useState } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
+import TeddyBearToys from './SubCategories/TeddyBearToys';
+import HorseToys from './SubCategories/HorseToys';
+import GiraffeToys from './SubCategories/GiraffeToys';
 
 const Category = () => {
+
+    const [categoryData, setCategoryData] = useState([]);
+    useEffect(() => {
+        fetch('http://localhost:5000/categoryToys')
+            .then(res => res.json())
+            .then(data => setCategoryData(data))
+    }, [])
+
+    const [teddyBearData, setTeddyBearData] = useState([])
+    useEffect(() => {
+        const teddyBearSubCategoryData = categoryData.filter(c => c.subCategory === "Teddy Bear Toys");
+        setTeddyBearData(teddyBearSubCategoryData)
+    }, [categoryData]);
+
+    const [horseData, setHorseData] = useState([]);
+    useEffect(() => {
+        const horseSubCategoryData = categoryData.filter(c => c.subCategory === "Horse Toys");
+        setHorseData(horseSubCategoryData)
+    }, [categoryData]);
+
+    const [giraffeData, setGiraffeData] = useState([]);
+    useEffect(() => {
+        const giraffeSubCategoryData = categoryData.filter(c => c.subCategory === "Giraffe Toys");
+        setGiraffeData(giraffeSubCategoryData)
+    }, [categoryData]);
+
+
+
     return (
         <div className="my-24">
             <div className=" text-center space-y-5">
@@ -10,52 +42,48 @@ const Category = () => {
             </div>
             <div className='mt-16'>
                 <Tabs>
-                    <TabList className="flex justify-center gap-16 mb-8">
+                    <TabList className="flex justify-center gap-1 md:gap-16 mb-8">
                         <Tab><h2 className='text-xl'>Teddy Bear Toys</h2></Tab>
                         <Tab><h2 className='text-xl'>Horse Toys</h2></Tab>
                         <Tab><h2 className='text-xl'>Giraffee Toys</h2></Tab>
                     </TabList>
 
                     <TabPanel>
-                        <div className="card w-96 bg-base-100 shadow-xl">
-                            <figure className="px-10 pt-10">
-                                <img src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="TeddyBear" className="rounded-xl" />
-                            </figure>
-                            <div className="card-body items-center text-center">
-                                <h2 className="card-title">Shoes!</h2>
-                                <p>If a dog chews shoes whose shoes does he choose?</p>
-                                <div className="card-actions">
-                                    <button className="btn btn-primary">Buy Now</button>
-                                </div>
-                            </div>
+                        <div className='grid grid-cols-1 md:grid-cols-3'>
+                            {
+                                teddyBearData.map(teddyBear => <TeddyBearToys
+
+                                    key={teddyBear._id}
+                                    teddyBear={teddyBear}
+
+                                ></TeddyBearToys>)
+                            }
                         </div>
                     </TabPanel>
+
                     <TabPanel>
-                        <div className="card w-96 bg-base-100 shadow-xl">
-                            <figure className="px-10 pt-10">
-                                <img src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Horse" className="rounded-xl" />
-                            </figure>
-                            <div className="card-body items-center text-center">
-                                <h2 className="card-title">Shoes!</h2>
-                                <p>If a dog chews shoes whose shoes does he choose?</p>
-                                <div className="card-actions">
-                                    <button className="btn btn-primary">Buy Now</button>
-                                </div>
-                            </div>
+                        <div className='grid grid-cols-1 md:grid-cols-3'>
+                            {
+                                horseData.map(horse => <HorseToys
+
+                                    key={horse._id}
+                                    horse={horse}
+
+                                ></HorseToys>)
+                            }
                         </div>
                     </TabPanel>
+
                     <TabPanel>
-                        <div className="card w-96 bg-base-100 shadow-xl">
-                            <figure className="px-10 pt-10">
-                                <img src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Giraffee" className="rounded-xl" />
-                            </figure>
-                            <div className="card-body items-center text-center">
-                                <h2 className="card-title">Shoes!</h2>
-                                <p>If a dog chews shoes whose shoes does he choose?</p>
-                                <div className="card-actions">
-                                    <button className="btn btn-primary">Buy Now</button>
-                                </div>
-                            </div>
+                        <div className='grid grid-cols-1 md:grid-cols-3'>
+                            {
+                                giraffeData.map(giraffe => <GiraffeToys
+
+                                    key={giraffe._id}
+                                    giraffe={giraffe}
+
+                                ></GiraffeToys>)
+                            }
                         </div>
                     </TabPanel>
                 </Tabs>
