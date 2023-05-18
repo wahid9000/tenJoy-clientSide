@@ -67,7 +67,7 @@ const NavBar = () => {
                             user &&
                             <div className="flex items-center">
                                 <li><Link>My Toys</Link></li>
-                                <li><Link>Add A Toy</Link></li>
+                                <li><Link to="addToy">Add A Toy</Link></li>
                             </div>
                         }
                         <li><Link>Blogs</Link></li>
