@@ -1,9 +1,10 @@
 import Rating from "react-rating";
 import { FaRegStar, FaStar } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const GiraffeToys = ({giraffe}) => {
 
-    const { picture, name, price, ratings } = giraffe;
+    const {_id, picture, name, price, ratings } = giraffe;
     return (
         <div className="card w-full mx-auto md:w-96 bg-base-100 border">
             <figure className="px-10 pt-10">
@@ -24,7 +25,7 @@ const GiraffeToys = ({giraffe}) => {
                     />
                 </p>
                 <div className="card-actions">
-                    <button className="btn btn-warning hover:bg-red-900 hover:text-white hover text-black font-semibold">View Details</button>
+                  <Link to={`/allToys/${_id}`}></Link>  <button className="btn btn-warning hover:bg-red-900 hover:text-white hover text-black font-semibold">View Details</button>
                 </div>
             </div>
         </div>

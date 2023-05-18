@@ -4,28 +4,34 @@ import { useLoaderData } from "react-router-dom";
 
 const ToyDetails = () => {
     const toyDetails = useLoaderData();
-    const { name, picture, price, ratings, quantity } = toyDetails;
+    const { seller, name, picture, price, ratings, quantity, descriptions } = toyDetails;
 
     return (
         <div>
-            <div className="hero min-h-screen bg-base-200">
-                <div className="hero-content flex-col lg:flex-row">
+            <div className="hero w-11/12  mx-auto bg-base-200 rounded-xl mb-20">
+                <div className="hero-content gap-16 flex-col lg:flex-row">
                     <img src={picture} className="max-w-sm rounded-lg shadow-2xl" />
                     <div>
-                        <h1 className="text-5xl font-bold">Toy Name: {name}</h1>
-                        <p className="py-6">Price: {price}</p>
-                        <p className="py-6">Available Quantity: {quantity}</p>
-                        <p className="py-6">
+                        <p className="py-6 flex items-center gap-2 text-xl font-semibold">
                             <Rating
-                                className="text-xl text-yellow-500"
+                                className="text-yellow-500"
                                 placeholderRating={ratings}
                                 emptySymbol={<FaRegStar></FaRegStar>}
                                 placeholderSymbol={<FaStar></FaStar>}
                                 fullSymbol={<FaStar></FaStar>}
                                 readonly
-                            />
+                            /> ({ratings} ratings)
                         </p>
-                        <button className="btn btn-primary">Get Started</button>
+                        <h1 className="text-4xl font-bold">Toy Name: {name}</h1>
+                        <p className="py-5 font-semibold text-xl">Price: ${price}</p>
+                        <p>{descriptions}</p>
+                        <p className="pt-5 text-xl">Only {quantity} item(s) left in stock!</p>
+                        <div className="divider"></div>
+                        <div className="text-xl font-semibold">
+                            <h2>Seller Name: {seller}</h2>
+                            <h2>Seller Email:</h2>
+                        </div>
+
                     </div>
                 </div>
             </div>
