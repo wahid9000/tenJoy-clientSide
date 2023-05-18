@@ -62,7 +62,7 @@ const NavBar = () => {
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1 font-semibold text-lg">
                         <li><Link>Home</Link></li>
-                        <li><Link>All Toys</Link></li>
+                        <li><Link to="/allToys">All Toys</Link></li>
                         {
                             user &&
                             <div className="flex items-center">
