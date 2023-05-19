@@ -47,12 +47,12 @@ const NavBar = () => {
                         </label>
                         <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                             <li><Link>Home</Link></li>
-                            <li><Link>All Toys</Link></li>
+                            <li><Link to="/allToys">All Toys</Link></li>
                             {
                                 user &&
-                                <div>
-                                    <li><Link>My Toys</Link></li>
-                                    <li><Link>Add A Toy</Link></li>
+                                <div className="items-center">
+                                    <li><Link to="/myToys">My Toys</Link></li>
+                                    <li><Link to="/addToy">Add A Toy</Link></li>
                                 </div>
                             }
                             <li><Link>Blogs</Link></li>

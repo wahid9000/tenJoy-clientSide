@@ -40,27 +40,27 @@ const UpdateToy = () => {
 
 
     return (
-        <div className="mb-48">
+        <div className="mb-20">
             <div className="border text-center p-5 bg-amber-100 rounded-2xl text-4xl font-bold">
                 <h2>Update Your Toy Information</h2>
             </div>
             <div className="mt-12">
                 <form onSubmit={handleUpdate}>
-                    <div className="grid w-7/12 mx-auto grid-cols-2 mb-5 gap-5">
+                    <div className="grid grid-cols-1 w-10/12 md:w-7/12 mx-auto md:grid-cols-2 mb-8 gap-5">
                         <div>
-                            <label className="block">Price of Toy:</label>
+                            <label className="block mb-2">Price of Toy:</label>
                             <input type="text" name="price" defaultValue={price} className="input input-bordered w-full max-w-md" />
                         </div>
                         <div>
-                            <label className="block">Available Quantity:</label>
+                            <label className="block mb-2">Available Quantity:</label>
                             <input type="text" name="quantity" defaultValue={quantity} className="input input-bordered w-full max-w-md" />
                         </div>
                     </div>
-                    <div className="w-7/12 mx-auto">
-                        <label className="block">Details About Toy:</label>
+                    <div className="w-10/12 md:w-7/12 mx-auto">
+                        <label className="block mb-2">Details About Toy:</label>
                         <textarea name="descriptions" defaultValue={descriptions} className="textarea textarea-bordered w-full"></textarea>
                     </div>
-                    <div className="w-7/12 mx-auto mt-5">
+                    <div className="w-10/12 md:w-7/12 mx-auto mt-5">
                         <button className="btn btn-block bg-[#c58b1f]">Update Your Toy</button>
                     </div>
                 </form>
