@@ -11,13 +11,13 @@ const NavBar = () => {
 
     const handleLogout = () => {
         Swal.fire({
-            title: 'Log Out?',
+            title: 'LogOut?',
             text: "You will be redirected to the Login Page!",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, delete it!'
+            confirmButtonText: 'LogOut'
         }).then((result) => {
             if (result.isConfirmed) {
                 logOut()

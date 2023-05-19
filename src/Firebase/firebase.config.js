@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBHNi7L2cdHU6TfBb5m43lM2MLA8s5B4Zo",
-  authDomain: "tenjoy-f62c3.firebaseapp.com",
-  projectId: "tenjoy-f62c3",
-  storageBucket: "tenjoy-f62c3.appspot.com",
-  messagingSenderId: "982069449405",
-  appId: "1:982069449405:web:9a89b708a1057e101a1dd4"
+  apiKey:import.meta.env.VITE_APIKEY,
+  authDomain:import.meta.env.VITE_AUTHDOMAIN,
+  projectId:import.meta.env.VITE_PROJECTID,
+  storageBucket:import.meta.env.VITE_STORAGEBUCKET,
+  messagingSenderId:import.meta.env.VITE_MESSAGINGSENDERID,
+  appId:import.meta.env.VITE_APPID
 };
 
 // Initialize Firebase
