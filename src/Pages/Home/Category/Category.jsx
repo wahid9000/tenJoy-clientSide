@@ -52,7 +52,7 @@ const Category = () => {
                     <TabPanel>
                         <div className='grid grid-cols-1 md:grid-cols-3'>
                             {
-                                teddyBearData.map(teddyBear => <TeddyBearToys
+                                teddyBearData.slice(0,3).map(teddyBear => <TeddyBearToys
 
                                     key={teddyBear._id}
                                     teddyBear={teddyBear}
@@ -65,7 +65,7 @@ const Category = () => {
                     <TabPanel>
                         <div className='grid grid-cols-1 md:grid-cols-3'>
                             {
-                                horseData.map(horse => <HorseToys
+                                horseData.slice(0,3).map(horse => <HorseToys
 
                                     key={horse._id}
                                     horse={horse}
@@ -78,7 +78,7 @@ const Category = () => {
                     <TabPanel>
                         <div className='grid grid-cols-1 md:grid-cols-3'>
                             {
-                                giraffeData.map(giraffe => <GiraffeToys
+                                giraffeData.slice(0,3).map(giraffe => <GiraffeToys
 
                                     key={giraffe._id}
                                     giraffe={giraffe}

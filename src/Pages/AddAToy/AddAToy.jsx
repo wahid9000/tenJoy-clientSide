@@ -1,18 +1,44 @@
+import { useContext } from "react";
+import { AuthContext } from "../../Provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const AddAToy = () => {
+
+    const { user } = useContext(AuthContext);
 
     const handleAddToy = event => {
         event.preventDefault();
         const form = event.target;
-        const name = form.name.value;
+        const name = form.toyName.value;
         const price = form.price.value;
         const ratings = form.rating.value;
         const quantity = form.quantity.value;
         const subCategory = form.selectedOption.value;
         const picture = form.photoURL.value;
         const descriptions = form.descriptions.value;
-        const toyInfo = {name, price, ratings, quantity, subCategory, picture, descriptions};
-        console.log(toyInfo);
+        const seller = form.sellerName.value;
+        const sellerEmail = form.email.value;
+        const toyInfo = { name, price, ratings, quantity, subCategory, picture, descriptions, seller, sellerEmail };
+
+        fetch('http://localhost:5000/allToys', {
+            method: "POST",
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify(toyInfo)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.insertedId) {
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'Your Toy Has Been Listed Successfully',
+                        icon: 'success',
+                        confirmButtonText: 'Continue'
+                    })
+                }
+            })
     }
 
 
@@ -26,13 +52,13 @@ const AddAToy = () => {
                 <form onSubmit={handleAddToy}>
                     <div className="grid w-9/12 mx-auto grid-cols-2 gap-5">
                         <div>
-                            <input type="text" name="sellerName" placeholder="*Seller Name" className="input input-bordered w-full max-w-md" />
+                            <input type="text" name="sellerName" placeholder="*Seller Name" defaultValue={user && user.displayName} className="input input-bordered w-full max-w-md" />
                         </div>
                         <div>
-                            <input type="text" name="email" placeholder="*Seller Email" className="input input-bordered w-full max-w-md" />
+                            <input type="text" name="email" defaultValue={user && user.email} placeholder="*Seller Email" className="input input-bordered w-full max-w-md" />
                         </div>
                         <div>
-                            <input type="text" name="name" placeholder="*Toy Name" className="input input-bordered w-full max-w-md" />
+                            <input type="text" name="toyName" placeholder="*Toy Name" className="input input-bordered w-full max-w-md" />
                         </div>
                         <div>
                             <input type="text" name="photoURL" placeholder="*Toy Photo URL" className="input input-bordered w-full max-w-md" />
@@ -41,7 +67,7 @@ const AddAToy = () => {
                     <div className="grid w-9/12 mx-auto grid-cols-4 gap-5 my-5">
                         <div>
                             <select className="block border w-full py-3 rounded-lg px-3 pr-8 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" name="selectedOption">
-                                <option disabled selected>Sub-Category</option>
+                                <option>Sub-Category</option>
                                 <option value="Teddy Bear Toys">Teddy Bear Toys</option>
                                 <option value="Horse Toys">Horse Toys</option>
                                 <option value="Giraffe Toys">Giraffe Toys</option>
@@ -63,7 +89,7 @@ const AddAToy = () => {
                     <div className="w-9/12 mx-auto mt-5">
                         <button className="btn btn-block bg-[#c58b1f]">Add Your Toy</button>
                     </div>
-                    
+
                 </form>
             </div>
         </div>

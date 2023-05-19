@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../Provider/AuthProvider";
 import Swal from "sweetalert2";
+import logo from '../../../assets/images/Logo.png'
 
 const NavBar = () => {
 
@@ -57,7 +58,7 @@ const NavBar = () => {
                             <li><Link>Blogs</Link></li>
                         </ul>
                     </div>
-                    <Link to='/'><img src="Logo.png" className="w-60" alt="" /></Link>
+                    <Link to='/'><img src={logo} className="w-60" alt="" /></Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1 font-semibold text-lg">

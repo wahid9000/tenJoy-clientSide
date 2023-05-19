@@ -4,7 +4,7 @@ import { useLoaderData } from "react-router-dom";
 
 const ToyDetails = () => {
     const toyDetails = useLoaderData();
-    const { seller, name, picture, price, ratings, quantity, descriptions } = toyDetails;
+    const { seller, sellerEmail,  name, picture, price, ratings, quantity, descriptions } = toyDetails;
 
     return (
         <div>
@@ -29,7 +29,7 @@ const ToyDetails = () => {
                         <div className="divider"></div>
                         <div className="text-xl font-semibold">
                             <h2>Seller Name: {seller}</h2>
-                            <h2>Seller Email:</h2>
+                            <h2>Seller Email: {sellerEmail}</h2>
                         </div>
 
                     </div>

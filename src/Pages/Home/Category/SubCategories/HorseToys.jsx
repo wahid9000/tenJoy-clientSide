@@ -2,6 +2,7 @@ import { FaRegStar, FaStar } from "react-icons/fa";
 import Rating from "react-rating";
 import { Link } from "react-router-dom";
 
+
 const HorseToys = ({horse}) => {
     const {_id, picture, name, price, ratings } = horse;
 
@@ -25,7 +26,7 @@ const HorseToys = ({horse}) => {
                     />
                 </p>
                 <div className="card-actions">
-                <Link to={`/allToys/${_id}`}></Link> <button className="btn btn-warning hover:bg-red-900 hover:text-white hover text-black font-semibold">View Details</button>
+                <Link to={`/allToys/${_id}`}> <button className="btn btn-warning hover:bg-red-900 hover:text-white hover text-black font-semibold">View Details</button></Link>
                 </div>
             </div>
         </div>
