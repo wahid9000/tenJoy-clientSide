@@ -6,7 +6,7 @@ import { Toaster } from "react-hot-toast";
 const Main = () => {
     return (
         <div>
-            <div className='w-11/12 mx-auto'>
+            <div className='w-11/12 mx-auto min-h-screen'>
                 <NavBar></NavBar>
                 <Outlet></Outlet>
             </div>

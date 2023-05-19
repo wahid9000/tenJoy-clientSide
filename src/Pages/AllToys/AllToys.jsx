@@ -5,7 +5,7 @@ const AllToys = () => {
     const allToys = useLoaderData()
     return (
         <div className="mb-48">
-            <div className="border text-center p-5 bg-slate-100 rounded-2xl">
+            <div className="border text-center p-5 bg-amber-100 rounded-2xl">
                 <h2 className="text-4xl font-bold">All Available Toys</h2>
             </div>
             <div>

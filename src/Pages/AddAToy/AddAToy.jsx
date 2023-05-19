@@ -45,7 +45,7 @@ const AddAToy = () => {
 
     return (
         <div className="mb-48">
-            <div className="border text-center p-5 bg-slate-100 rounded-2xl text-4xl font-bold">
+            <div className="border text-center p-5 bg-amber-100 rounded-2xl text-4xl font-bold">
                 <h2>List Your Toy For Sell</h2>
             </div>
             <div className="mt-8">
