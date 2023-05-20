@@ -55,7 +55,7 @@ const NavBar = () => {
                                     <li><Link to="/addToy">Add A Toy</Link></li>
                                 </div>
                             }
-                            <li><Link>Blogs</Link></li>
+                            <li><Link to="/blogs">Blogs</Link></li>
                         </ul>
                     </div>
                     <Link to='/'><img src={logo} className="w-60" alt="" /></Link>
@@ -71,7 +71,7 @@ const NavBar = () => {
                                 <li><Link to="/addToy">Add A Toy</Link></li>
                             </div>
                         }
-                        <li><Link>Blogs</Link></li>
+                        <li><Link to="/blogs">Blogs</Link></li>
                     </ul>
                 </div>
                 <div className="navbar-end">

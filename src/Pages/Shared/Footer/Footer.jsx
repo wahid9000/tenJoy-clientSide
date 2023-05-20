@@ -1,36 +1,46 @@
-import {  FaGoogle, FaInstagram, FaTwitter } from 'react-icons/fa';
+import { FaAddressCard, FaGoogle, FaInstagram, FaMailchimp, FaPhoneAlt, FaTwitter } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import logo from '../../../assets/images/Logo.png'
 const Footer = () => {
     return (
         <footer className="footer p-10 bg-orange-600 text-base-content">
             <div>
-                <img src="Logo.png" className=" rounded-full w-60" alt="" />
+                <Link to='/'>
+                    <div><img src={logo} className=" rounded-full w-48" alt="" /></div>
+                </Link>
                 <p className='text-lg text-white'>TenJoy.<br />Best Toy Marketplace to pick toys for your child.</p>
-                <div className='flex gap-2 text-lg text-white'>
-                    <Link><FaGoogle></FaGoogle></Link>
-                    <Link><FaInstagram></FaInstagram></Link> 
-                    <Link><FaTwitter></FaTwitter></Link> 
+            </div>
+
+            <div className="text-white">
+                <span className="footer-title">Contact Information</span>
+                <div className='flex gap-1 items-center'>
+                    <FaPhoneAlt></FaPhoneAlt>
+                    <Link>Phone: +880 01725 454859</Link>
+                </div>
+                <div className='flex gap-1 items-center'>
+                    <FaMailchimp></FaMailchimp>
+                    <Link>Email: tenjoy_10@email.com</Link>
                 </div>
             </div>
+
             <div className="text-white">
-                <span className="footer-title">Services</span>
-                <Link className="link link-hover">Branding</Link>
-                <a className="link link-hover">Design</a>
-                <a className="link link-hover">Marketing</a>
-                <a className="link link-hover">Advertisement</a>
+                <span className="footer-title">Address</span>
+                <div className='flex gap-1 items-center'>
+                    <FaAddressCard></FaAddressCard>
+                    <Link>Address: 25/A, Baridhara, Mirpur, Dhaka</Link>
+                </div>
+                <Link>Available ( 10.00PM to 5.00 PM)</Link>
+
             </div>
+
             <div className="text-white">
-                <span className="footer-title">Company</span>
-                <a className="link link-hover">About us</a>
-                <a className="link link-hover">Contact</a>
-                <a className="link link-hover">Jobs</a>
-                <a className="link link-hover">Press kit</a>
-            </div>
-            <div className="text-white">
-                <span className="footer-title">Legal</span>
-                <a className="link link-hover">Terms of use</a>
-                <a className="link link-hover">Privacy policy</a>
-                <a className="link link-hover">Cookie policy</a>
+                <span className="footer-title">Follow Us</span>
+                <div className='flex gap-4 text-lg text-white'>
+                    <Link to="https://www.google.com/"><FaGoogle></FaGoogle></Link>
+                    <Link to='https://www.facebook.com/'><FaInstagram></FaInstagram></Link>
+                    <Link to='https://twitter.com/'><FaTwitter></FaTwitter></Link>
+                </div>
+
             </div>
         </footer>
     );
