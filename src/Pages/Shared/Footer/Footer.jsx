@@ -8,12 +8,12 @@ const Footer = () => {
                 <Link to='/'>
                     <div><img src={logo} className=" rounded-full w-48" alt="" /></div>
                 </Link>
-                <p className='text-lg text-white'>TenJoy.<br />Best Toy Marketplace to pick toys for your child.</p>
+                <p className='text-lg text-white roboto'>TenJoy.<br />Best Toy Marketplace to pick toys for your child.</p>
             </div>
 
-            <div className="text-white">
-                <span className="footer-title">Contact Information</span>
-                <div className='flex gap-1 items-center'>
+            <div className="text-white roboto">
+                <span className="footer-title roboto">Contact Information</span>
+                <div className='flex gap-1 items-center roboto'>
                     <FaPhoneAlt></FaPhoneAlt>
                     <Link>Phone: +880 01725 454859</Link>
                 </div>
@@ -23,7 +23,7 @@ const Footer = () => {
                 </div>
             </div>
 
-            <div className="text-white">
+            <div className="text-white roboto">
                 <span className="footer-title">Address</span>
                 <div className='flex gap-1 items-center'>
                     <FaAddressCard></FaAddressCard>
@@ -33,7 +33,7 @@ const Footer = () => {
 
             </div>
 
-            <div className="text-white">
+            <div className="text-white roboto">
                 <span className="footer-title">Follow Us</span>
                 <div className='flex gap-4 text-lg text-white'>
                     <Link to="https://www.google.com/"><FaGoogle></FaGoogle></Link>

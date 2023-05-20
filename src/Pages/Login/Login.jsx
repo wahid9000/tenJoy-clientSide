@@ -53,7 +53,7 @@ const Login = () => {
 
 
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 mt-8 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 mt-8 mb-20 roboto">
             <div className="rounded-lg w-full py-12">
                 <h2 className="text-4xl text-center font-bold mb-8">Sign In</h2>
                 <form onSubmit={handleSignIn}>

@@ -4,10 +4,10 @@ const Blogs = () => {
     useTitle(' Blogs')
     return (
         <div>
-            <div className="border text-center p-5 text-4xl font-bold bg-amber-100 rounded-lg">
+            <div className="border text-center p-5 text-4xl font-bold bg-amber-100 rounded-lg roboto">
                 <h2>Blogs</h2>
             </div>
-            <div className="bg-amber-100 my-10 rounded-lg py-5 mx-auto w-9/12">
+            <div className="bg-amber-100 my-10 rounded-lg py-5 mx-auto w-9/12 roboto">
                 <div className="w-8/12 mx-auto">
                     <h2 className="text-xl font-bold">1. What is an access token and refresh token? How do they work and where should we store them on the client-side?</h2><br />
 

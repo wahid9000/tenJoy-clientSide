@@ -13,8 +13,8 @@ const TeddyBearToys = ({ teddyBear }) => {
             </figure>
             <div className="divider"></div> 
             <div className="card-body items-center text-center">
-                <h2 className="card-title font-bold text-2xl">{name}</h2>
-                <p className="text-xl">${price}</p>
+                <h2 className="card-title font-bold text-2xl roboto">{name}</h2>
+                <p className="text-xl roboto font-semibold">${price}</p>
                 <p>
                     <Rating
                         className="text-xl text-yellow-500"
@@ -26,7 +26,7 @@ const TeddyBearToys = ({ teddyBear }) => {
                     />
                 </p>
                 <div className="card-actions">
-                <Link to={`/allToys/${_id}`}><button className="btn btn-warning hover:bg-red-900 hover:text-white hover text-black font-semibold">View Details</button></Link> 
+                <Link to={`/allToys/${_id}`}><button className="btn btn-warning hover:bg-red-900 hover:text-white roboto hover text-black font-semibold">View Details</button></Link> 
                 </div>
             </div>
         </div>

@@ -49,7 +49,7 @@ const AddAToy = () => {
 
     return (
         <div className="mb-48">
-            <div className="border text-center p-5 bg-amber-100 rounded-2xl text-4xl font-bold">
+            <div className="border text-center p-5 bg-amber-100 rounded-2xl text-4xl font-bold roboto">
                 <h2>List Your Toy For Sell</h2>
             </div>
             <div className="mt-8">
@@ -74,6 +74,9 @@ const AddAToy = () => {
                                 <option>Sub-Category</option>
                                 <option value="Teddy Bear Toys">Teddy Bear Toys</option>
                                 <option value="Horse Toys">Horse Toys</option>
+                                <option value="Dogs Toys">Dogs Toys</option>
+                                <option value="Tiger Toys">Tiger Toys</option>
+                                <option value="Dinosaur Toys">Dinosaur Toys</option>
                                 <option value="Giraffe Toys">Giraffe Toys</option>
                             </select>
                         </div>
@@ -91,7 +94,7 @@ const AddAToy = () => {
                         <textarea name="descriptions" className="textarea textarea-bordered w-full" placeholder="*Write details about toy..."></textarea>
                     </div>
                     <div className="w-9/12 mx-auto mt-5">
-                        <button className="btn btn-block bg-[#c58b1f]">Add Your Toy</button>
+                        <button className="btn btn-block roboto bg-[#c58b1f]">Add Your Toy</button>
                     </div>
 
                 </form>

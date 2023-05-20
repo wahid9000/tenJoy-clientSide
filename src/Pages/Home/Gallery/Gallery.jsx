@@ -2,7 +2,7 @@
 const Gallery = () => {
     return (
         <div className="my-12">
-            <h2 className="text-5xl md:text-6xl font-bold mb-8 text-center md:text-left">Gallery</h2>
+            <h2 className="text-5xl md:text-6xl font-bold mb-8 text-center md:text-left roboto">Gallery</h2>
             <div className="divider"></div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <img src="https://i.ibb.co/SNm4JnK/toy.jpg" alt="" className="h-[651px] w-full rounded-lg" />

@@ -5,6 +5,8 @@ import Banner from "../Banner/Banner";
 import Category from "../Category/Category";
 import Gallery from "../Gallery/Gallery";
 import useTitle from '../../../hooks/useTitle';
+import OurAchivement from '../OurAchievement/OurAchivement';
+import Connect from '../Connect/Connect';
 AOS.init();
 
 const Home = () => {
@@ -13,7 +15,7 @@ const Home = () => {
         <div>
             <div
                 data-aos="fade-down"
-                data-aos-duration="800"
+                data-aos-duration="1000"
                 data-aos-delay="100"
             >
                 <Banner></Banner>
@@ -21,7 +23,7 @@ const Home = () => {
             <div
                 data-aos="fade-up"
                 data-aos-delay="100"
-                data-aos-duration="800"
+                data-aos-duration="1000"
             >
                 <Gallery></Gallery>
             </div>
@@ -29,6 +31,8 @@ const Home = () => {
 
             <Category></Category>
             <AboutUs></AboutUs>
+            <OurAchivement></OurAchivement>
+            <Connect></Connect>
 
 
         </div>

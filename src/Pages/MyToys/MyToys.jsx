@@ -65,17 +65,17 @@ const MyToys = () => {
     return (
         <div className="mb-48">
             <div className="border text-center p-5 bg-amber-100 rounded-2xl">
-                <h2 className="text-4xl font-bold">My Toys</h2>
+                <h2 className="text-4xl font-bold roboto">My Toys</h2>
             </div>
             <div className="p-2 text-center">
-                <input onChange={event => setSearchText(event.target.value)} type="text" placeholder="Search By Toy Name..." className="input input-bordered w-full max-w-xs block mx-auto" />
-                <button onClick={handleSearch} className="btn btn-warning mt-2">Search</button>
+                <input onChange={event => setSearchText(event.target.value)} type="text" placeholder="Search By Toy Name..." className="input roboto input-bordered w-full max-w-xs block mx-auto" />
+                <button onClick={handleSearch} className="btn roboto btn-warning mt-2">Search</button>
             </div>
             <div className="mt-8">
                 <div className="overflow-x-auto w-full">
                     <table className="table w-full">
                         <thead>
-                            <tr>
+                            <tr className="roboto">
                                 <th className="bg-[#c58b1f] text-white">Seller Name</th>
                                 <th className="bg-[#c58b1f] text-white">Toy Name</th>
                                 <th className="bg-[#c58b1f] text-white">Sub-Category</th>

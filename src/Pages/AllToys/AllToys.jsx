@@ -8,7 +8,7 @@ const AllToys = () => {
     return (
         <div className="mb-48">
             <div className="border text-center p-5 bg-amber-100 rounded-2xl">
-                <h2 className="text-4xl font-bold">All Available Toys</h2>
+                <h2 className="text-4xl font-bold roboto">All Available Toys</h2>
             </div>
             <div>
             </div>
@@ -16,7 +16,7 @@ const AllToys = () => {
                 <div className="overflow-x-auto w-full">
                     <table className="table w-full">
                         <thead>
-                            <tr>
+                            <tr className="roboto">
                                 <th className="bg-[#c58b1f] text-white">Seller Name</th>
                                 <th className="bg-[#c58b1f] text-white">Toy Name</th>
                                 <th className="bg-[#c58b1f] text-white">Sub-Category</th>

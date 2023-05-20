@@ -40,16 +40,16 @@ const Category = () => {
 
     return (
         <div className="my-24">
-            <div className=" text-center space-y-5" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
-                <h2 className="text-5xl font-bold">Shop By Category</h2>
-                <p className="text-xl">Shop the best toy from us. We deliver quality products and ensures your child safety.</p>
+            <div className=" text-center space-y-5" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                <h2 className="text-5xl roboto font-bold">Shop By Category</h2>
+                <p className="text-xl poppins">Shop the best toy from us. We deliver quality products and ensures your child safety.</p>
             </div>
             <div className='mt-16'>
                 <Tabs>
                     <TabList className="flex justify-center gap-1 md:gap-16 mb-8">
-                        <Tab><h2 className='text-xl'>Teddy Bear Toys</h2></Tab>
-                        <Tab><h2 className='text-xl'>Horse Toys</h2></Tab>
-                        <Tab><h2 className='text-xl'>Giraffee Toys</h2></Tab>
+                        <Tab><h2 className='text-xl roboto font-semibold'>Teddy Bear Toys</h2></Tab>
+                        <Tab><h2 className='text-xl roboto font-semibold'>Horse Toys</h2></Tab>
+                        <Tab><h2 className='text-xl roboto font-semibold'>Giraffee Toys</h2></Tab>
                     </TabList>
 
                     <TabPanel>
