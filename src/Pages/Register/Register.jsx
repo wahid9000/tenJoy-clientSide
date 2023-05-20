@@ -4,9 +4,10 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { toast } from "react-hot-toast";
 import { updateProfile } from "firebase/auth";
+import useTitle from "../../hooks/useTitle";
 
 const Register = () => {
-
+    useTitle(' Sign Up')
     const navigate = useNavigate();
     const { createUser, logOut } = useContext(AuthContext)
     const [ error, setError ] = useState("");

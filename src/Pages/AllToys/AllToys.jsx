@@ -1,8 +1,10 @@
 import { useLoaderData } from "react-router-dom";
 import AllToysRows from "./AllToysRows";
+import useTitle from "../../hooks/useTitle";
 
 const AllToys = () => {
     const allToys = useLoaderData()
+    useTitle(' All Toys')
     return (
         <div className="mb-48">
             <div className="border text-center p-5 bg-amber-100 rounded-2xl">

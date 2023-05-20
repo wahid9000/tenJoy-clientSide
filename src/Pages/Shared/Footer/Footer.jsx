@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import logo from '../../../assets/images/Logo.png'
 const Footer = () => {
     return (
-        <footer className="footer p-10 bg-orange-600 text-base-content">
+        <footer className="footer p-10 bg-orange-600 text-base-content h-full md:h-64 items-center">
             <div>
                 <Link to='/'>
                     <div><img src={logo} className=" rounded-full w-48" alt="" /></div>

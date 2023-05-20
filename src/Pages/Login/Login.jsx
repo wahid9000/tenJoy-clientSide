@@ -3,8 +3,10 @@ import { FaArrowRight, FaGoogle } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { toast } from "react-hot-toast";
+import useTitle from "../../hooks/useTitle";
 
 const Login = () => {
+    useTitle(' Sign In')
     const navigate = useNavigate();
     const location = useLocation();
 

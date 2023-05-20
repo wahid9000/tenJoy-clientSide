@@ -1,7 +1,9 @@
 import { useLoaderData, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import useTitle from "../../hooks/useTitle";
 
 const UpdateToy = () => {
+    useTitle(' Update Toy Details')
     const toyInfo = useLoaderData();
     console.log(toyInfo);
     const {_id, price, quantity, descriptions } = toyInfo;
