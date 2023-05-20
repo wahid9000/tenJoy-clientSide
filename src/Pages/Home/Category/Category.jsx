@@ -4,6 +4,9 @@ import 'react-tabs/style/react-tabs.css';
 import TeddyBearToys from './SubCategories/TeddyBearToys';
 import HorseToys from './SubCategories/HorseToys';
 import GiraffeToys from './SubCategories/GiraffeToys';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
 
 const Category = () => {
 
@@ -37,7 +40,7 @@ const Category = () => {
 
     return (
         <div className="my-24">
-            <div className=" text-center space-y-5">
+            <div className=" text-center space-y-5" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
                 <h2 className="text-5xl font-bold">Shop By Category</h2>
                 <p className="text-xl">Shop the best toy from us. We deliver quality products and ensures your child safety.</p>
             </div>
@@ -50,9 +53,10 @@ const Category = () => {
                     </TabList>
 
                     <TabPanel>
-                        <div className='grid grid-cols-1 md:grid-cols-3'>
+                        <div className='grid grid-cols-1 md:grid-cols-3' data-aos="fade-right" data-aos-duration="800"
+                            data-aos-delay="100">
                             {
-                                teddyBearData.slice(0,3).map(teddyBear => <TeddyBearToys
+                                teddyBearData.slice(0, 3).map(teddyBear => <TeddyBearToys
 
                                     key={teddyBear._id}
                                     teddyBear={teddyBear}
@@ -63,9 +67,10 @@ const Category = () => {
                     </TabPanel>
 
                     <TabPanel>
-                        <div className='grid grid-cols-1 md:grid-cols-3'>
+                        <div className='grid grid-cols-1 md:grid-cols-3' data-aos="fade-up" data-aos-duration="800"
+                            data-aos-delay="100">
                             {
-                                horseData.slice(0,3).map(horse => <HorseToys
+                                horseData.slice(0, 3).map(horse => <HorseToys
 
                                     key={horse._id}
                                     horse={horse}
@@ -76,9 +81,10 @@ const Category = () => {
                     </TabPanel>
 
                     <TabPanel>
-                        <div className='grid grid-cols-1 md:grid-cols-3'>
+                        <div className='grid grid-cols-1 md:grid-cols-3' data-aos="fade-left" data-aos-duration="800"
+                            data-aos-delay="100">
                             {
-                                giraffeData.slice(0,3).map(giraffe => <GiraffeToys
+                                giraffeData.slice(0, 3).map(giraffe => <GiraffeToys
 
                                     key={giraffe._id}
                                     giraffe={giraffe}

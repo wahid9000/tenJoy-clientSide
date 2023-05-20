@@ -1,10 +1,12 @@
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 const AddAToy = () => {
 
     const { user } = useContext(AuthContext);
+    const navigate = useNavigate();
 
     const handleAddToy = event => {
         event.preventDefault();
@@ -37,6 +39,7 @@ const AddAToy = () => {
                         icon: 'success',
                         confirmButtonText: 'Continue'
                     })
+                    navigate('/myToys')
                 }
             })
     }

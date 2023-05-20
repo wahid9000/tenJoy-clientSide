@@ -10,9 +10,9 @@ const AboutUs = () => {
                 <div>
                     <img src="https://i.ibb.co/sjvMtdQ/child5.webp" alt="" />
                 </div>
-                <div className="space-y-7">
+                <div className="space-y-7 text-center md:text-left mb-16">
                     <h2 className="text-5xl font-semibold">We offer Amazing Toys with Premium Discounts</h2>
-                    <p className="text-lg w-10/12">Animal toys like giraffes, teddy bears, and horses captivate childrens hearts, offering comfort, companionship, and imaginative adventures. With their soft and huggable bodies, these toys become cherished friends, sparking creativity and creating lasting memories.
+                    <p className="text-lg mx-auto md:mx-0 w-10/12">Animal toys like giraffes, teddy bears, and horses captivate childrens hearts, offering comfort, companionship, and imaginative adventures. With their soft and huggable bodies, these toys become cherished friends, sparking creativity and creating lasting memories.
                     </p>
                     <button className="btn btn-outline btn-warning text-xl font-bold w-48 h-16">Learn More</button>
                 </div>

@@ -7,6 +7,8 @@ const MyToys = () => {
 
     const { user } = useContext(AuthContext)
 
+    const [searchText, setSearchText] = useState("");
+
     const url = `http://localhost:5000/myToys?email=${user.email}`
 
     const [myToys, setMyToys] = useState([])
@@ -16,8 +18,15 @@ const MyToys = () => {
             .then(data => setMyToys(data))
     }, [url])
 
-    const [remainingToys, setRemainingToys] = useState(myToys);
 
+    const handleSearch = () => {
+        fetch(`http://localhost:5000/myToySearchByName/${searchText}`)
+            .then(res => res.json())
+            .then(data => setMyToys(data))
+    }
+
+
+    const [remainingToys, setRemainingToys] = useState(myToys);
     const handleDelete = (id) => {
         Swal.fire({
             title: 'Are you sure?',
@@ -57,7 +66,9 @@ const MyToys = () => {
             <div className="border text-center p-5 bg-amber-100 rounded-2xl">
                 <h2 className="text-4xl font-bold">My Toys</h2>
             </div>
-            <div>
+            <div className="p-2 text-center">
+                <input onChange={event => setSearchText(event.target.value)} type="text" placeholder="Search By Toy Name..." className="input input-bordered w-full max-w-xs block mx-auto" />
+                <button onClick={handleSearch} className="btn btn-warning mt-2">Search</button>
             </div>
             <div className="mt-8">
                 <div className="overflow-x-auto w-full">
