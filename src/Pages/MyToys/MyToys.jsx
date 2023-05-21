@@ -16,7 +16,7 @@ const MyToys = () => {
     const [myToys, setMyToys] = useState([])
     const [sort, setSort] = useState(true);
 
-    const url = `https://tenjoy-server-wahid9000.vercel.app/myToys?email=${user.email}&sort=${sort}`;
+    const url = `https://tenjoy-server.vercel.app/myToys?email=${user.email}&sort=${sort}`;
 
  
     useEffect(() => {

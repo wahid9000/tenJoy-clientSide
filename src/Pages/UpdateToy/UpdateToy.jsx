@@ -18,7 +18,7 @@ const UpdateToy = () => {
         const descriptions = form.descriptions.value;
         const updatedToy = {price, quantity, descriptions};
         
-        fetch(`https://tenjoy-server-wahid9000.vercel.app/myToys/${_id}`, {
+        fetch(`https://tenjoy-server.vercel.app/myToys/${_id}`, {
             method: "PUT",
             headers: {
                 "content-type" : "application/json"
