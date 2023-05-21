@@ -34,12 +34,12 @@ const router = createBrowserRouter([
             {
                 path: '/allToys',
                 element: <AllToys></AllToys>,
-                loader: () => fetch('http://localhost:5000/allToys')
+                loader: () => fetch('https://tenjoy-server-wahid9000.vercel.app/allToys')
             },
             {
                 path: '/allToys/:id',
                 element: <PrivateRoute><ToyDetails></ToyDetails></PrivateRoute>,
-                loader: ({params}) => fetch(`http://localhost:5000/allToys/${params.id}`)
+                loader: ({params}) => fetch(`https://tenjoy-server-wahid9000.vercel.app/allToys/${params.id}`)
             },
             {
                 path: '/addToy',
@@ -52,7 +52,7 @@ const router = createBrowserRouter([
             {
                 path: '/updateToy/:id',
                 element: <UpdateToy></UpdateToy>,
-                loader: ({params}) => fetch(`http://localhost:5000/myToys/${params.id}`)
+                loader: ({params}) => fetch(`https://tenjoy-server-wahid9000.vercel.app/myToys/${params.id}`)
             },
             {
                 path: '/blogs',

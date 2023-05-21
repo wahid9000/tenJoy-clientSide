@@ -26,7 +26,7 @@ const AddAToy = () => {
         const sellerEmail = form.email.value;
         const toyInfo = { name, price, ratings, quantity, subCategory, picture, descriptions, seller, sellerEmail };
 
-        fetch('http://localhost:5000/allToys', {
+        fetch('https://tenjoy-server-wahid9000.vercel.app/allToys', {
             method: "POST",
             headers: {
                 "content-type": "application/json"

@@ -16,7 +16,7 @@ const MyToys = () => {
     const [myToys, setMyToys] = useState([])
     const [sort, setSort] = useState(true);
 
-    const url = `http://localhost:5000/myToys?email=${user.email}&sort=${sort}`;
+    const url = `https://tenjoy-server-wahid9000.vercel.app/myToys?email=${user.email}&sort=${sort}`;
 
  
     useEffect(() => {
@@ -41,7 +41,7 @@ const MyToys = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/myToys/${id}`, {
+                fetch(`https://tenjoy-server-wahid9000.vercel.app/myToys/${id}`, {
                     method: "DELETE",
                 })
                     .then(res => res.json())
