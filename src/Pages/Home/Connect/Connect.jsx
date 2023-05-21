@@ -12,13 +12,13 @@ const Connect = () => {
                 <p className="text-xl w-2/3 mx-auto poppins">We have achieved amazing response from our sellers, customers who helped us to grow. We are Thankful! Stay with us and keep exploring our site for more amazing deals.</p>
             </div>
             <div>
-                <div className="h-[600px] w-full rounded-lg" style={{ backgroundImage: "url(https://previews.123rf.com/images/rawpixel/rawpixel1612/rawpixel161236658/67626320-casual-children-cheerful-cute-friends-kids-joy-concept.jpg)", backgroundSize: "cover" }} data-aos="fade-bottom"
+                <div className="h-[600px] w-full rounded-lg" style={{ backgroundImage: "url(https://previews.123rf.com/images/rawpixel/rawpixel1612/rawpixel161236658/67626320-casual-children-cheerful-cute-friends-kids-joy-concept.jpg)", backgroundSize: "cover", backgroundPosition: "center" }} data-aos="fade-bottom"
                     data-aos-duration="1000"
                     data-aos-delay="100">
 
                     <div className="h-full bg-gradient-to-t from-[#151515] to-[rgba(21, 21, 21, 0)] pt-16  rounded-lg" >
 
-                        <div className='bg-orange-600 text-white text-center w-1/2 mx-auto mt-80 rounded-lg h-96' data-aos="fade-bottom"
+                        <div className='bg-orange-600 text-white text-center md:w-1/2 mx-auto mt-80 rounded-lg h-96 w-full' data-aos="fade-up"
                     data-aos-duration="1000"
                     data-aos-delay="100">
                             <div className='pt-16'>

@@ -1,11 +1,14 @@
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import useTitle from "../../hooks/useTitle";
+import useScrollTop from "../../hooks/useScrollTop";
 
 const AddAToy = () => {
     useTitle(' Add A Toy')
+    const { pathName } = useLocation();
+    useScrollTop(pathName);
     const { user } = useContext(AuthContext);
     const navigate = useNavigate();
 

@@ -4,8 +4,11 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { toast } from "react-hot-toast";
 import useTitle from "../../hooks/useTitle";
+import useScrollTop from "../../hooks/useScrollTop";
 
 const Login = () => {
+    const { pathName } = useLocation();
+    useScrollTop(pathName);
     useTitle(' Sign In')
     const navigate = useNavigate();
     const location = useLocation();

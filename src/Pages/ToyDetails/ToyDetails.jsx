@@ -1,12 +1,16 @@
 import { FaRegStar, FaStar } from "react-icons/fa";
 import Rating from "react-rating";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useLocation } from "react-router-dom";
 import useTitle from "../../hooks/useTitle";
+import useScrollTop from "../../hooks/useScrollTop";
 
 const ToyDetails = () => {
+
+    const { pathName } = useLocation();
+    useScrollTop(pathName);
     useTitle(' Details')
     const toyDetails = useLoaderData();
-    const { seller, sellerEmail,  name, picture, price, ratings, quantity, descriptions } = toyDetails;
+    const { seller, sellerEmail, name, picture, price, ratings, quantity, descriptions } = toyDetails;
 
     return (
         <div>

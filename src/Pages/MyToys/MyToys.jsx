@@ -7,10 +7,10 @@ import useTitle from "../../hooks/useTitle";
 const MyToys = () => {
     useTitle(' My Toys')
     const { user } = useContext(AuthContext)
-
     const [searchText, setSearchText] = useState("");
+    const [sort, setSort] = useState(true);
 
-    const url = `http://localhost:5000/myToys?email=${user.email}`
+    const url = `http://localhost:5000/myToys?email=${user.email}&sort=${sort}`;
 
     const [myToys, setMyToys] = useState([])
     useEffect(() => {
@@ -18,6 +18,12 @@ const MyToys = () => {
             .then(res => res.json())
             .then(data => setMyToys(data))
     }, [url])
+
+
+    const toggleSortOrder = () => {
+        setSort(!sort);
+    };
+
 
 
     const handleSearch = () => {
@@ -67,11 +73,18 @@ const MyToys = () => {
             <div className="border text-center p-5 bg-amber-100 rounded-2xl">
                 <h2 className="text-4xl font-bold roboto">My Toys</h2>
             </div>
+
             <div className="p-2 text-center">
                 <input onChange={event => setSearchText(event.target.value)} type="text" placeholder="Search By Toy Name..." className="input roboto input-bordered w-full max-w-xs block mx-auto" />
                 <button onClick={handleSearch} className="btn roboto btn-warning mt-2">Search</button>
             </div>
-            <div className="mt-8">
+            <div className="text-center md:text-right">
+                <button className={sort ? "btn bg-red-700 hover:bg-red-900 text-white roboto" : "btn btn-success text-black roboto"} onClick={toggleSortOrder}>
+                {sort ? 'Sort By Descending Order' : 'Sort By Ascending Order'}
+            </button>
+            </div>
+            
+            <div className="mt-2">
                 <div className="overflow-x-auto w-full">
                     <table className="table w-full">
                         <thead>

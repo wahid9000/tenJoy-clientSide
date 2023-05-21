@@ -14,7 +14,7 @@ const OurAchivement = () => {
 
             <div className="flex-row md:flex justify-center items-center mt-16 px-5 space-y-5">
 
-                <div className="h-[300px] w-full rounded-lg" style={{ backgroundImage: "url(https://media.istockphoto.com/id/683888694/photo/lonely-teddy-bear-sitting-in-the-dark-room.jpg?s=170667a&w=0&k=20&c=D_k-cyNOV3FtZmoZExchsd2938DVUMqG_Ku-x0ouI4c=)", backgroundSize: "cover" }} data-aos="fade-right"
+                <div className="h-[300px] w-full rounded-l-lg" style={{ backgroundImage: "url(https://media.istockphoto.com/id/683888694/photo/lonely-teddy-bear-sitting-in-the-dark-room.jpg?s=170667a&w=0&k=20&c=D_k-cyNOV3FtZmoZExchsd2938DVUMqG_Ku-x0ouI4c=)", backgroundSize: "cover" }} data-aos="fade-right"
                     data-aos-duration="1000"
                     data-aos-delay="100">
                     <div className="h-full bg-gradient-to-t from-[#151515] to-[rgba(21, 21, 21, 0)] pt-16  rounded-lg" >
@@ -35,7 +35,7 @@ const OurAchivement = () => {
                 </div>
 
 
-                <div className="h-[300px] w-full rounded-lg" style={{ backgroundImage: "url(https://thumbs.dreamstime.com/b/white-teddy-bear-sitting-dark-background-white-teddy-bear-dark-background-diferent-poses-toy-bear-177392194.jpg)", backgroundSize: "cover" }} data-aos="fade-left"
+                <div className="h-[300px] w-full rounded-r-lg" style={{ backgroundImage: "url(https://thumbs.dreamstime.com/b/white-teddy-bear-sitting-dark-background-white-teddy-bear-dark-background-diferent-poses-toy-bear-177392194.jpg)", backgroundSize: "cover" }} data-aos="fade-left"
                     data-aos-duration="1000"
                     data-aos-delay="100">
                     <div className="h-full bg-gradient-to-t from-[#151515] to-[rgba(21, 21, 21, 0)] pt-16 rounded-lg" >
