@@ -51,13 +51,13 @@ const AddAToy = () => {
 
 
     return (
-        <div className="mb-48">
+        <div className="mb-24">
             <div className="border text-center p-5 bg-amber-100 rounded-2xl text-4xl font-bold roboto">
                 <h2>List Your Toy For Sell</h2>
             </div>
             <div className="mt-8">
                 <form onSubmit={handleAddToy}>
-                    <div className="grid w-9/12 mx-auto grid-cols-2 gap-5">
+                    <div className="grid w-9/12 mx-auto md:grid-cols-2 gap-5">
                         <div>
                             <input type="text" name="sellerName" placeholder="*Seller Name" defaultValue={user && user.displayName} className="input input-bordered w-full max-w-md" />
                         </div>
@@ -71,7 +71,7 @@ const AddAToy = () => {
                             <input type="text" name="photoURL" placeholder="*Toy Photo URL" className="input input-bordered w-full max-w-md" />
                         </div>
                     </div>
-                    <div className="grid w-9/12 mx-auto grid-cols-4 gap-5 my-5">
+                    <div className="grid w-9/12 mx-auto grid-cols-2 md:grid-cols-4 gap-5 my-5">
                         <div>
                             <select className="block border w-full py-3 rounded-lg px-3 pr-8 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" name="selectedOption">
                                 <option>Sub-Category</option>

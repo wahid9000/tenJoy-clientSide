@@ -62,30 +62,30 @@ const Register = () => {
     }
 
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 mt-8 mb-20 roboto">
+        <div className="grid grid-cols-1 md:grid-cols-2 mt-0 md:mt-8 mb-20 roboto">
             <div className="rounded-lg w-full py-8">
                 <h2 className="text-4xl text-center font-bold mb-8">Sign Up</h2>
                 <form onSubmit={handleSignUp}>
 
-                    <div className="mx-auto w-1/2">
+                    <div className="mx-auto w-10/12 md:w-1/2">
                         <label>Email:</label>
                         <input type="email" name="email" placeholder="*Email" className="input input-bordered w-full rounded-2xl block mb-4" />
                     </div>
-                    <div className="mx-auto w-1/2">
+                    <div className="mx-auto w-10/12 md:w-1/2">
                         <label>
                             Password:
                         </label>
                         <input type="password" name="password" placeholder="*Password" className="input input-bordered w-full rounded-2xl block mb-4" />
                     </div>
-                    <div className="mx-auto w-1/2">
+                    <div className="mx-auto w-10/12 md:w-1/2">
                         <label>Name:</label>
                         <input type="text" name="name" placeholder="*Name" className="input input-bordered w-full rounded-2xl block mb-4" />
                     </div>
-                    <div className="mx-auto w-1/2">
+                    <div className="mx-auto w-10/12 md:w-1/2">
                         <label>PhotoURL:</label>
                         <input type="text" name="photoURL" placeholder="*PhotoURL" className="input input-bordered w-full rounded-2xl block mb-4" />
                     </div>
-                    <div className="mx-auto w-1/2">
+                    <div className="mx-auto w-10/12 md:w-1/2">
                         <button className="btn bg-[#136513] btn-block rounded-2xl">Sign Up</button>
                     </div>
                     <div className="text-center mt-4 flex justify-center gap-2">

@@ -56,21 +56,21 @@ const Login = () => {
 
 
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 mt-8 mb-20 roboto">
+        <div className="grid grid-cols-1 md:grid-cols-2 mt-0 md:mt-8 mb-20 roboto">
             <div className="rounded-lg w-full py-12">
                 <h2 className="text-4xl text-center font-bold mb-8">Sign In</h2>
                 <form onSubmit={handleSignIn}>
-                    <div className="mx-auto w-1/2">
+                    <div className="mx-auto w-10/12 md:w-1/2">
                         <label>Email:</label>
                         <input type="email" name="email" placeholder="Email" className="input input-bordered w-full rounded-2xl block mb-4" />
                     </div>
-                    <div className="mx-auto w-1/2">
+                    <div className="mx-auto w-10/12 md:w-1/2">
                         <label>
                             Password:
                         </label>
                         <input type="password" name="password" placeholder="Password" className="input input-bordered w-full rounded-2xl block mb-4" />
                     </div>
-                    <div className="mx-auto w-1/2">
+                    <div className="mx-auto w-10/12 md:w-1/2">
                         <button className="btn btn-primary btn-block rounded-2xl">Sign In</button>
                     </div>
                     <div className="text-center mt-4 flex justify-center gap-2">
@@ -81,8 +81,8 @@ const Login = () => {
                     <p className="hidden">{error}</p>
                     <p className="hidden">{success}</p>
                 </form>
-                <div className="mx-auto w-1/2 mt-4 text-center">
-                    <button onClick={handleGoogleLogin} className="btn btn-outline rounded-2xl"><FaGoogle className="mr-2"></FaGoogle>Sign In With Google</button>
+                <div className="mx-auto w-10/12 md:w-1/2 mt-4 text-center">
+                    <button onClick={handleGoogleLogin} className="btn btn-outline  rounded-2xl"><FaGoogle className="mr-2"></FaGoogle>Sign In With Google</button>
                 </div>
             </div>
             <div>
