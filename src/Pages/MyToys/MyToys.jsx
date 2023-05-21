@@ -3,16 +3,22 @@ import { AuthContext } from "../../Provider/AuthProvider";
 import MyToysRows from "./MyToysRows";
 import Swal from "sweetalert2";
 import useTitle from "../../hooks/useTitle";
+import { useLocation } from "react-router-dom";
+import useScrollTop from "../../hooks/useScrollTop";
 
 const MyToys = () => {
     useTitle(' My Toys')
+    
+    const { pathName } = useLocation();
+    useScrollTop(pathName);
+
     const { user } = useContext(AuthContext)
-    const [searchText, setSearchText] = useState("");
+    const [myToys, setMyToys] = useState([])
     const [sort, setSort] = useState(true);
 
     const url = `http://localhost:5000/myToys?email=${user.email}&sort=${sort}`;
 
-    const [myToys, setMyToys] = useState([])
+ 
     useEffect(() => {
         fetch(url)
             .then(res => res.json())
@@ -24,16 +30,6 @@ const MyToys = () => {
         setSort(!sort);
     };
 
-
-
-    const handleSearch = () => {
-        fetch(`http://localhost:5000/allToySearchByName/${searchText}`)
-            .then(res => res.json())
-            .then(data => setMyToys(data))
-    }
-
-
-    const [remainingToys, setRemainingToys] = useState(myToys);
     const handleDelete = (id) => {
         Swal.fire({
             title: 'Are you sure?',
@@ -51,8 +47,8 @@ const MyToys = () => {
                     .then(res => res.json())
                     .then(data => {
                         console.log(data);
-                        const remaining = remainingToys.filter(toy => toy._id !== id);
-                        setRemainingToys(remaining)
+                        const remaining = myToys.filter(toy => toy._id !== id);
+                        setMyToys(remaining)
                         if (data.deletedCount > 0) {
                             Swal.fire(
                                 'Deleted!',
@@ -70,14 +66,10 @@ const MyToys = () => {
 
     return (
         <div className="mb-48">
-            <div className="border text-center p-5 bg-amber-100 rounded-2xl">
+            <div className="border text-center p-5 bg-amber-100 rounded-2xl mb-3">
                 <h2 className="text-4xl font-bold roboto">My Toys</h2>
             </div>
 
-            <div className="p-2 text-center">
-                <input onChange={event => setSearchText(event.target.value)} type="text" placeholder="Search By Toy Name..." className="input roboto input-bordered w-full max-w-xs block mx-auto" />
-                <button onClick={handleSearch} className="btn roboto btn-warning mt-2">Search</button>
-            </div>
             <div className="text-center md:text-right">
                 <button className={sort ? "btn bg-red-700 hover:bg-red-900 text-white roboto" : "btn btn-success text-black roboto"} onClick={toggleSortOrder}>
                 {sort ? 'Sort By Descending Order' : 'Sort By Ascending Order'}
