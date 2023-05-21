@@ -1,16 +1,30 @@
 import { useLoaderData } from "react-router-dom";
 import AllToysRows from "./AllToysRows";
 import useTitle from "../../hooks/useTitle";
+import { useState } from "react";
 
 const AllToys = () => {
-    const allToys = useLoaderData()
+    const allToysInfo = useLoaderData()
+    const [allToys, setAllToys] = useState(allToysInfo)
     useTitle(' All Toys')
+    const [searchText, setSearchText] = useState("");
+
+
+    const handleSearch = () => {
+        fetch(`http://localhost:5000/allToySearchByName/${searchText}`)
+            .then(res => res.json())
+            .then(data => setAllToys(data))
+    }
+
+
     return (
         <div className="mb-48">
             <div className="border text-center p-5 bg-amber-100 rounded-2xl">
                 <h2 className="text-4xl font-bold roboto">All Available Toys</h2>
             </div>
-            <div>
+            <div className="p-2 text-center">
+                <input onChange={event => setSearchText(event.target.value)} type="text" placeholder="Search By Toy Name..." className="input roboto input-bordered w-full max-w-xs block mx-auto" />
+                <button onClick={handleSearch} className="btn roboto btn-warning mt-2">Search</button>
             </div>
             <div className="mt-8">
                 <div className="overflow-x-auto w-full">
