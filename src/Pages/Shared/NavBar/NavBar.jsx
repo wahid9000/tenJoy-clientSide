@@ -58,12 +58,12 @@ const NavBar = () => {
                             <li><Link to="/blogs">Blogs</Link></li>
                         </ul>
                     </div>
-                    <Link to='/'><img src={logo} className="w-60" alt="" /></Link>
-                    <Link  to='/' className="text-xl italic font-extrabold">TenJoy</Link>
+                    <Link to='/'><img src={logo} className="w-96 md:w-60" alt="" /></Link>
+
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal roboto px-1 font-semibold text-lg">
-                        
+                        <li><Link to='/' className="text-xl italic font-extrabold">TenJoy</Link></li>
                         <li><Link>Home</Link></li>
                         <li><Link to="/allToys">All Toys</Link></li>
                         {

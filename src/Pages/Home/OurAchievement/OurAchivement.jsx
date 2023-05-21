@@ -35,7 +35,7 @@ const OurAchivement = () => {
                 </div>
 
 
-                <div className="h-[300px] w-full rounded-r-lg" style={{ backgroundImage: "url(https://thumbs.dreamstime.com/b/white-teddy-bear-sitting-dark-background-white-teddy-bear-dark-background-diferent-poses-toy-bear-177392194.jpg)", backgroundSize: "cover" }} data-aos="fade-left"
+                <div className="h-[300px] w-full rounded-r-lg" style={{ backgroundImage: "url(https://i.ibb.co/D1jNZ8T/teddy.jpg)", backgroundSize: "cover" }} data-aos="fade-left"
                     data-aos-duration="1000"
                     data-aos-delay="100">
                     <div className="h-full bg-gradient-to-t from-[#151515] to-[rgba(21, 21, 21, 0)] pt-16 rounded-lg" >
