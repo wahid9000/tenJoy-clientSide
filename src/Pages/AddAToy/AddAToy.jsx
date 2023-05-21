@@ -16,7 +16,7 @@ const AddAToy = () => {
         event.preventDefault();
         const form = event.target;
         const name = form.toyName.value;
-        const price = form.price.value;
+        const price = parseInt(event.target.price.value);
         const ratings = form.rating.value;
         const quantity = form.quantity.value;
         const subCategory = form.selectedOption.value;

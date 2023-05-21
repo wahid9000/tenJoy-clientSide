@@ -13,7 +13,7 @@ const UpdateToy = () => {
     const handleUpdate = event => {
         event.preventDefault();
         const form = event.target;
-        const price = form.price.value;
+        const price = parseInt(event.target.price.value);
         const quantity = form.quantity.value;
         const descriptions = form.descriptions.value;
         const updatedToy = {price, quantity, descriptions};
